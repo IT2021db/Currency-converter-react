@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "./style.css";
 import { currencies } from '../currencies';
 
-const Form = ({calculateResult, result}) => {         //it only works without curly brackets in arguments
-    const [currency, setCurrency] = useState([]);   // but comunicate is that calculateResult is not a function
-    const [amount, setAmount] = useState("");       // with brackets form disappears, background image only
+const Form = ({calculateResult, result}) => {        
+    const [currency, setCurrency] = useState([]);  
+    const [amount, setAmount] = useState("");       
 
     const onSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     }
+
 
     return (
 
@@ -51,7 +52,7 @@ const Form = ({calculateResult, result}) => {         //it only works without cu
                 </p>
             </fieldset>
             <p className="form__result">
-                Otrzymasz: <strong >{result.targetAmount}</strong>
+                Otrzymasz: <strong ></strong>
             </p>
             <p>
                 <button type="submit" className="form__button">Przelicz</button>
@@ -63,7 +64,7 @@ const Form = ({calculateResult, result}) => {         //it only works without cu
                 >Wyczyść</button>
             </p>
         </form>
-    );
+    )
 };
 
 export default Form;
