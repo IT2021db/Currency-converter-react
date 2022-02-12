@@ -12,7 +12,10 @@ const Form = ({ calculateResult, result }) => {
         calculateResult(currency, amount);
     }
     return (
-        <form onSubmit={onSubmit} >
+        <form
+            className="form"
+            onSubmit={onSubmit}
+        >
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Przelicznik walut</legend>
                 <p>
@@ -47,11 +50,11 @@ const Form = ({ calculateResult, result }) => {
                 </p>
             </fieldset>
             <p className="form__result">
-              <p> <strong>Otrzymasz:</strong></p> 
-                 <Result result={result} />
+                <p> <strong>Otrzymasz:</strong></p>
+                <Result result={result} />
             </p>
             <p>
-                <button type="submit" className="form__button">Przelicz</button>
+                <button type="submit" className="form__submitButton">Przelicz</button>
             </p>
         </form>
     )
