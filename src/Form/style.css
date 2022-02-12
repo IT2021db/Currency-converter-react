@@ -1,7 +1,7 @@
 .form {
     max-width: 700px;
     margin: auto;
-    text-align: center;
+   
 }
 
 .form__legend {
@@ -9,20 +9,20 @@
     border-radius: 5px;
     background-color: hsl(180, 58%, 98%);
     padding: 5px;
-    color: teal;
+    color: rgb(21, 116, 116);
     font-weight: 700;
     text-align: left;
 }
 
 .form__fieldset {
     background-color: rgb(217, 245, 245);
-    border: 1px solid teal;
+    border: 1px solid rgb(217, 245, 245);
     margin: 20px auto;
     border-radius: 5px;
     max-width: 400px;
 }
 
-.form__button {
+.form__submitButton {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -31,19 +31,14 @@
     width: 100%;
 }
 
-.form__button--reset {
-    background-color: hsl(180, 58%, 91%);
-    margin-bottom: 20px;
-}
-
-.form__button:hover {
+.form__submitButton:hover {
     background-color: hsl(180deg 78% 30%);
 }
 
 .form__result {
     background-color: rgb(217, 245, 245);
     padding: 20px 10px;
-    font-weight: 900;
+    font-weight: 500;
     border-radius: 5px;
     max-width: 400px;
     text-align: center;
