@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
 import { currencies } from '../currencies';
+import Result from "./Result";
 
 const Form = ({ calculateResult, result }) => {
-    const [currency, setCurrency] = useState([]);
+    const [currency, setCurrency] = useState(currencies[0].short);
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -46,7 +47,8 @@ const Form = ({ calculateResult, result }) => {
                 </p>
             </fieldset>
             <p className="form__result">
-                Otrzymasz: <strong ></strong>
+              <p> <strong>Otrzymasz:</strong></p> 
+                 <Result result={result} />
             </p>
             <p>
                 <button type="submit" className="form__button">Przelicz</button>
