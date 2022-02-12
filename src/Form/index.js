@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import "./style.css";
 import { currencies } from '../currencies';
 
-const Form = ({calculateResult, result}) => {        
-    const [currency, setCurrency] = useState([]);  
-    const [amount, setAmount] = useState("");       
+const Form = ({ calculateResult, result }) => {
+    const [currency, setCurrency] = useState([]);
+    const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     }
-
-
     return (
-
         <form onSubmit={onSubmit} >
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Przelicznik walut</legend>
@@ -47,21 +44,12 @@ const Form = ({calculateResult, result}) => {
                         </select>
                     </label>
                 </p>
-                <p>
-                    Aktualny kurs: <strong >{calculateResult.rate}</strong>
-                </p>
             </fieldset>
             <p className="form__result">
                 Otrzymasz: <strong ></strong>
             </p>
             <p>
                 <button type="submit" className="form__button">Przelicz</button>
-            </p>
-            <p>
-                <button
-                    type="reset"
-                    className="form__button form__button--reset"
-                >Wyczyść</button>
             </p>
         </form>
     )
