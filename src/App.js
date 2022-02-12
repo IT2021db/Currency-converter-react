@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import { currencies } from './currencies';
 import "./index.css";
+import "./App.css";
 
 function App() {
   const [result, setResult] = useState();
