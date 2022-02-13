@@ -1,6 +1,6 @@
 # Currency-converter-react
 ## About the project:
- This is the simple currency converter from PLN into optionally euros, american dollars or british pounds. 
+ This is the simple currency converter from PLN into optionally Euros, American Dollars or British Pounds. 
 ## DEMO:
 [currency-converter-react](https://it2021db.github.io/currency_converter-react/)
 ## Technologies used in project:
