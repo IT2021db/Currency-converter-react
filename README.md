@@ -1,17 +1,23 @@
 # Currency-converter-react
+
 ## About the project:
- This is the simple currency converter from PLN into optionally Euros, American Dollars or British Pounds. 
+
+This is the simple currency converter from PLN into optionally euros, american dollars or pritish Pounds.
+
 ## DEMO:
+
 [currency-converter-react](https://it2021db.github.io/currency_converter-react/)
+
 ## Technologies used in project:
-* HTML
-* CSS
-* javascript
-* Convention BEM
-* Immutability
-* React
-* Create-React-App
-* Webpack
+
+- HTML
+- CSS
+- javascript
+- Convention BEM
+- Immutability
+- React
+- Create-React-App
+- Webpack
 
 # Getting Started with Create React App
 
@@ -30,6 +36,7 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ###
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
