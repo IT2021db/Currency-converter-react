@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { currencies } from '../currencies';
 import Result from "./Result";
+import Clock from "./Clock";
 
 const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -17,6 +18,7 @@ const Form = ({ calculateResult, result }) => {
             onSubmit={onSubmit}
         >
             <fieldset className="form__fieldset">
+                <Clock />
                 <legend className="form__legend">Przelicznik walut</legend>
                 <p>
                     <label>
@@ -54,7 +56,7 @@ const Form = ({ calculateResult, result }) => {
                 <Result result={result} />
             </p>
             <p>
-                <button type="submit" className="form__submitButton">Przelicz</button>
+                <button type="submit" className="form form__submitButton">Przelicz</button>
             </p>
         </form>
     )
