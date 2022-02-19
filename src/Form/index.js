@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { currencies } from '../currencies';
 import Result from "./Result";
-import Clock from "./Clock";
+import {Clock} from "./Clock";
 
 const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -22,22 +22,24 @@ const Form = ({ calculateResult, result }) => {
                 <legend className="form__legend">Przelicznik walut</legend>
                 <p>
                     <label>
-                        Kwota w PLN*:
+                        Kwota w PLN*:{" "}
                         <input
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             placeholder="Wpisz kwotę w PLN"
                             type="number"
                             step="0.01"
+                            className= "form__fieldset--input"
                             required />
                     </label>
                 </p>
                 <p>
                     <label>
-                        Wybierz walutę:
+                        Wybierz walutę:{" "}
                         <select
                             value={currency}
                             onChange={({ target }) => setCurrency(target.value)}
+                           className= "form__fieldset--input"
                         >
                             {currencies.map((currency => (
                                 <option
@@ -56,7 +58,7 @@ const Form = ({ calculateResult, result }) => {
                 <Result result={result} />
             </p>
             <p>
-                <button type="submit" className="form form__submitButton">Przelicz</button>
+                <button type="submit" className="form__submitButton">Przelicz</button>
             </p>
         </form>
     )
