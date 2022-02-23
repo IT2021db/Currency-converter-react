@@ -17,18 +17,19 @@
 .form__fieldset {
     background-color: rgb(217, 245, 245);
     border: 1px solid rgb(217, 245, 245);
-    margin:15px auto;
+    margin: 15px auto;
     border-radius: 5px;
     max-width: 500px;
     padding: 10px 20px 20px 20px;
-    
+
 }
+
 .form__fieldset--input {
     padding: 4px;
     margin-top: 10px;
     border-radius: 5px;
-    border-color:  rgb(217, 245, 245);
-    }
+    border: none;
+}
 
 .form__submitButton {
     padding: 15px;
