@@ -1,20 +1,20 @@
 import React from "react";
-import "./style.css";
+import { Info, Expected } from "./styled";
 
 const Result = ({ result }) => (
-    <p className="result">
+    <div>
         {!!result && (
             <>
                 {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
-                <strong>
+                <Expected>
                     {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
-                </strong>
-                <p>
+                </Expected>
+                <Info>
                     Kurs&nbsp;{result.currency}&nbsp;wynosi:&nbsp;{result.rate}PLN
-                </p>
+                </Info>
             </>
         )}
-    </p>
+    </div>
 );
 
 export default Result;
