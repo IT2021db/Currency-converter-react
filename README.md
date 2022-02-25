@@ -2,7 +2,7 @@
 
 ## About the project:
 
-This is the simple currency converter from PLN into optionally euros, american dollars or british pounds.
+This is the simple currency converter from PLN optionally into euros, american dollars or british pounds.
 
 ## DEMO:
 
