@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCurrentDate } from "./useCurrenDate";
-import { Wrapper} from "./styled";
+import { Wrapper } from "./styled";
 
 const formatDate = (date) => date.toLocaleString(undefined, {
     month: "long",
@@ -13,7 +13,7 @@ const formatDate = (date) => date.toLocaleString(undefined, {
 });
 
 export const Clock = () => {
-    const date =useCurrentDate();
+    const date = useCurrentDate();
 
     return (
         <Wrapper className="clock">
