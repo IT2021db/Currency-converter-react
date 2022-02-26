@@ -11,13 +11,17 @@ This is the simple currency converter from PLN optionally into euros, american d
 ## Technologies used in project:
 
 - HTML
-- CSS
+- CSS GRID
+- CSS FlexBox
 - javascript
-- Convention BEM
+- BEM Convention
 - Immutability
 - React
 - Create-React-App
 - Webpack
+- React Hooks
+- npm
+- Git, GitHub
 
 # Getting Started with Create React App
 
