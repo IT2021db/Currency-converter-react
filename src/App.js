@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Form from './Form';
 import { currencies } from './currencies';
-import "./index.css";
-import {Wrapper} from "./styled";
+import { Wrapper } from "./styled";
 
 function App() {
   const [result, setResult] = useState();
