@@ -4,8 +4,9 @@ import Result from "./Result";
 import { Clock } from "./Clock";
 import { Wrapper, Legend, Fieldset, Button, ResultBlock, Field } from "./styled";
 
-const Form = ({ calculateResult, result }) => {
-    const [currency, setCurrency] = useState(currencies[0].short);
+
+const Form = ({ calculateResult, result, ratesData }) => {
+    const [currency, setCurrency] = useState("PLN");
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -32,17 +33,25 @@ const Form = ({ calculateResult, result }) => {
                 <p>
                     <label>
                         Wybierz walutę:{" "}
-                        <Field
+                        <Field                      //tutaj sie wykłada app
                             as="select"
                             value={currency}
                             onChange={({ target }) => setCurrency(target.value)}
                         >
-                            {currencies.map((currency => (
+                            {Object.keys(ratesData.rates).map(((currency) => (
+                                <option
+                                    key={currency}
+                                    value={currency}
+                                >
+                                    {currency}
+
+                                    {/* {currencies.map((currency => (
                                 <option
                                     key={currency.short}
                                     value={currency.short}
                                 >
-                                    {currency.name}
+                                    {currency.name}  */}
+
                                 </option>
                             )))}
                         </Field>
