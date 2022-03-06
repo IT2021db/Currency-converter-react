@@ -27,12 +27,7 @@ export const Fieldset = styled.fieldset`
     font-weight: bold;
 `;
 
-export const Loading = styled.fieldset`
-    background-color: ${({ theme }) => theme.color.clearDay};
-    border:none;
-    margin: 15px auto;
-    border-radius: 5px;
-    max-width: 500px;
+export const Loading = styled(Fieldset)`
     padding:30px;
     color:   ${({ theme }) => theme.color.teal};
     font-weight: bold;
@@ -42,18 +37,10 @@ export const Loading = styled.fieldset`
     line-height: 2;
 `;
 
-export const Failure = styled.fieldset`
-    background-color: ${({ theme }) => theme.color.clearDay};
-    border:none;
-    border-radius: 5px;
-    max-width: 500px;
-    padding: 40px;
-    color:   ${({ theme }) => theme.color.thunderbird};
-    font-weight: bold;
-    font-size: large;
-    text-align: center;
-    line-height: 2;
-`;
+export const Failure = styled(Loading)`
+     color:   ${({ theme }) => theme.color.thunderbird};
+     font-style: normal;
+   `;
 
 export const Field = styled.input`
     padding: 4px;
