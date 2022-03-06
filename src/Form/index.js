@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Result from "./Result";
 import { Clock } from "./Clock";
 import { Wrapper, Legend, Fieldset, Button, ResultBlock, Field, Loading, Failure } from "./styled";
+import load from './load.gif';
 
 const Form = ({ calculateResult, result, ratesApi }) => {
     const [currency, setCurrency] = useState("EUR");
@@ -17,7 +18,8 @@ const Form = ({ calculateResult, result, ratesApi }) => {
             {ratesApi.state === "loading"
                 ? (<>
                     <Loading> <Legend >Przelicznik walut</Legend>
-                    Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego
+                        Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego <br />
+                        <img src={load} alt='cirle' width='50' height='50' />
                     </Loading>
                 </>
                 )
