@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { currencies } from './currencies';
 import { Wrapper } from "./styled";
-import { useRatesData } from "./useRatesData";
+import { useRatesApi } from "./useRatesApi";
 
 function App() {
   const [result, setResult] = useState();
-  const ratesData = useRatesData();
+  const ratesApi = useRatesApi();
 
   const calculateResult = (currency, amount) => {
-    const rate = ratesData.rates[currency];   //co to jest za zapis?
-
-    // currencies
-    // .find(({ short }) => short === currency)
-    // .rate;
+    const rate = ratesApi.rates[currency];   //co to jest  za zapis?
 
     setResult({
       sourceAmount: +amount,
       targetAmount: amount * rate,
       currency,
+      exchangeRate: 1 / rate,
     });
   }
 
@@ -27,7 +23,7 @@ function App() {
       <Form
         calculateResult={calculateResult}
         result={result}
-        ratesData={ratesData}
+        ratesApi={ratesApi}
       />
     </Wrapper>)
 }
