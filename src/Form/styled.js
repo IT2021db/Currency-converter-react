@@ -29,8 +29,6 @@ export const Fieldset = styled.fieldset`
 
 export const Loading = styled(Fieldset)`
     padding:30px;
-    color:   ${({ theme }) => theme.color.teal};
-    font-weight: bold;
     font-size: large;
     font-style: italic;
     text-align: center;
