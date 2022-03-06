@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 export const useRatesApi = () => {
     const [ratesApi, setRatesApi] = useState({
         state: "loading",
-        // date: 0,
-        // rates: 0,
     });
+    const apiURL = "https://api.exchangerate.host/latest?base=PLN";
 
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await fetch("https://api.exchangerate.host/latest?base=PLN")
+                const response = await fetch(apiURL);
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
@@ -20,11 +19,10 @@ export const useRatesApi = () => {
                     rates,
                     date,
                 });
-
             }
             catch (error) {
                 setRatesApi({ state: "error" });
-                // console.error("sth bad happened", error);
+                console.log("Something bad has happened", error);
             }
         };
         setTimeout(fetchRates, 1000);
