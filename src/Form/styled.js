@@ -26,6 +26,17 @@ export const Fieldset = styled.fieldset`
     font-weight: bold;
 `;
 
+export const InformationApi = styled.fieldset`
+    background-color: ${({ theme }) => theme.color.clearDay};
+    border:none;
+    margin: 15px auto;
+    border-radius: 5px;
+    max-width: 500px;
+    padding: 10px 20px 20px 20px;
+    color:   ${({ theme }) => theme.color.teal};
+    font-weight: bold;
+`;
+
 export const Field = styled.input`
     padding: 4px;
     margin-top: 10px;
