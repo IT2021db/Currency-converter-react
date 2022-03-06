@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Result from "./Result";
 import { Clock } from "./Clock";
-import { Wrapper, Legend, Fieldset, Button, ResultBlock, Field, InformationApi } from "./styled";
+import { Wrapper, Legend, Fieldset, Button, ResultBlock, Field, Loading, Failure } from "./styled";
 
 const Form = ({ calculateResult, result, ratesApi }) => {
     const [currency, setCurrency] = useState("EUR");
@@ -15,13 +15,16 @@ const Form = ({ calculateResult, result, ratesApi }) => {
     return (
         <Wrapper onSubmit={onSubmit}>
             {ratesApi.state === "loading"
-                ? (
-                    <InformationApi>Trwa ładowanie danych z Europejskigo Banku Centralnego</InformationApi>
+                ? (<>
+                    <Loading> <Legend >Przelicznik walut</Legend>
+                    Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego
+                    </Loading>
+                </>
                 )
                 : (
                     ratesApi.state === "error"
                         ? (
-                            <InformationApi>erroor Banku Centralnego</InformationApi>
+                            <Failure>ups... Coś poszło nie tak 😏 Sprawdź połącznie z internetem</Failure>
                         )
                         : (
                             <>
