@@ -8,7 +8,7 @@ function App() {
   const ratesApi = useRatesApi();
 
   const calculateResult = (currency, amount) => {
-    const rate = ratesApi.rates[currency];   //co to jest  za zapis?
+    const rate = ratesApi.rates[currency];
 
     setResult({
       sourceAmount: +amount,
