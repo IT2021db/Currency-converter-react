@@ -6,6 +6,6 @@ export const Info = styled.p`
 `;
 
 export const Expected = styled.strong`
-    font-size:25px;
+    font-size:20px;
     color: ${({ theme }) => theme.color.thunderbird};
 `;
