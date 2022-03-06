@@ -13,6 +13,7 @@ export const Legend = styled.legend`
     font-weight: 700;
     text-align: left;
     font-size: 20px;
+    font-style: normal;
 `;
 
 export const Fieldset = styled.fieldset`
@@ -26,15 +27,32 @@ export const Fieldset = styled.fieldset`
     font-weight: bold;
 `;
 
-export const InformationApi = styled.fieldset`
+export const Loading = styled.fieldset`
     background-color: ${({ theme }) => theme.color.clearDay};
     border:none;
     margin: 15px auto;
     border-radius: 5px;
     max-width: 500px;
-    padding: 10px 20px 20px 20px;
+    padding:30px;
     color:   ${({ theme }) => theme.color.teal};
     font-weight: bold;
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+    line-height: 2;
+`;
+
+export const Failure = styled.fieldset`
+    background-color: ${({ theme }) => theme.color.clearDay};
+    border:none;
+    border-radius: 5px;
+    max-width: 500px;
+    padding: 40px;
+    color:   ${({ theme }) => theme.color.thunderbird};
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    line-height: 2;
 `;
 
 export const Field = styled.input`
