@@ -19,10 +19,12 @@ This is the simple currency converter from PLN optionally into euros, american d
 - React
 - Create-React-App
 - Webpack
-- React Hooks
 - npm
 - Git, GitHub
-
+- React Hooks - including Personal Hooks
+- style-components
+- open API - cooperating with
+- try-catch method in catching errors
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
