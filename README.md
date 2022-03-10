@@ -6,7 +6,7 @@ This is the simple currency converter from PLN optionally into euros, american d
 
 ## DEMO:
 
-[currency-converter-react](https://it2021db.github.io/currency_converter-react/)
+[currency-converter-react](https://it2021db.github.io/currency-converter-react/)
 
 ## Technologies used in project:
 
