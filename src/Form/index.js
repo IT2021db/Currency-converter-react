@@ -4,7 +4,7 @@ import { Clock } from "./Clock";
 import { Wrapper, Legend, Fieldset, Button, ResultBlock, Field, Loading, Failure } from "./styled";
 import load from './load.gif';
 
-const Form = ({ calculateResult, result, ratesApi }) => {
+const Form = ({ calculateResult, result, exchangeRates }) => {
     const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
 
@@ -15,7 +15,7 @@ const Form = ({ calculateResult, result, ratesApi }) => {
 
     return (
         <Wrapper onSubmit={onSubmit}>
-            {ratesApi.state === "loading"
+            {exchangeRates.state === "loading"
                 ? (<>
                     <Loading> <Legend >Przelicznik walut</Legend>
                         Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego <br />
@@ -24,7 +24,7 @@ const Form = ({ calculateResult, result, ratesApi }) => {
                 </>
                 )
                 : (
-                    ratesApi.state === "error"
+                    exchangeRates.state === "error"
                         ? (
                             <Failure>ups... Coś poszło nie tak 😏 Sprawdź połącznie z internetem</Failure>
                         )
@@ -53,7 +53,7 @@ const Form = ({ calculateResult, result, ratesApi }) => {
                                                 value={currency}
                                                 onChange={({ target }) => setCurrency(target.value)}
                                             >
-                                                {Object.keys(ratesApi.rates).map(((currency) => (
+                                                {Object.keys(exchangeRates.rates).map(((currency) => (
                                                     <option
                                                         key={currency}
                                                         value={currency}
@@ -69,7 +69,7 @@ const Form = ({ calculateResult, result, ratesApi }) => {
                                     <p> <strong>Otrzymasz:</strong></p>
                                     <Result
                                         result={result}
-                                        ratesApi={ratesApi}
+                                        exchangeRates={exchangeRates}
                                     />
                                 </ResultBlock>
                                 <Button type="submit">Przelicz</Button>

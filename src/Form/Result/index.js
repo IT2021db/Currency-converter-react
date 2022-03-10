@@ -1,7 +1,7 @@
 import React from "react";
 import { Info, Expected } from "./styled";
 
-const Result = ({ result, ratesApi }) => (
+const Result = ({ result, exchangeRates }) => (
     <div>
         {!!result && (
             <>
@@ -11,7 +11,7 @@ const Result = ({ result, ratesApi }) => (
                 </Expected>
                 <Info>
                     Kurs&nbsp;{result.currency}&nbsp;wynosi:&nbsp;{result.exchangeRate.toFixed(3)}&nbsp;PLN<br />
-                    z dnia:&nbsp;{ratesApi.date}
+                    z dnia:&nbsp;{exchangeRates.date}
                 </Info>
             </>
         )}

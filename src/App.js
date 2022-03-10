@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Form from './Form';
 import { Wrapper } from "./styled";
-import { useRatesApi } from "./useRatesApi";
+import { useExchangeRates } from "./useExchangeRates";
 
 function App() {
   const [result, setResult] = useState();
-  const ratesApi = useRatesApi();
+  const exchangeRates = useExchangeRates();
 
   const calculateResult = (currency, amount) => {
-    const rate = ratesApi.rates[currency];
+    const rate = exchangeRates.rates[currency];
 
     setResult({
       sourceAmount: +amount,
@@ -23,7 +23,7 @@ function App() {
       <Form
         calculateResult={calculateResult}
         result={result}
-        ratesApi={ratesApi}
+        exchangeRates={exchangeRates}
       />
     </Wrapper>)
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-export const useRatesApi = () => {
-    const [ratesApi, setRatesApi] = useState({
+export const useExchangeRates = () => {
+    const [exchangeRates, setExchangeRates] = useState({
         state: "loading",
     });
     const apiURL = "https://api.exchangerate.host/latest?base=PLN";
@@ -14,18 +14,18 @@ export const useRatesApi = () => {
                     throw new Error(response.statusText);
                 }
                 const { rates, date } = await response.json();
-                setRatesApi({
+                setExchangeRates({
                     state: "success",
                     rates,
                     date,
                 });
             }
             catch (error) {
-                setRatesApi({ state: "error" });
+                setExchangeRates({ state: "error" });
                 console.log("Something bad has happened", error);
             }
         };
         setTimeout(fetchRates, 1000);
     }, []);
-    return ratesApi;
+    return exchangeRates;
 };
