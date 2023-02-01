@@ -19,13 +19,12 @@ function App() {
   }
 
   return (
-    <Wrapper>
-      <Form
+       <Form
         calculateResult={calculateResult}
         result={result}
         exchangeRates={exchangeRates}
       />
-    </Wrapper>)
+   )
 }
 
 export default App;
