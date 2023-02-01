@@ -42,6 +42,7 @@ const Form = ({ calculateResult, result, exchangeRates }) => {
                                                 placeholder="Wpisz kwotę w PLN"
                                                 type="number"
                                                 step="0.01"
+                                                min="1"
                                                 required />
                                         </label>
                                     </p>
