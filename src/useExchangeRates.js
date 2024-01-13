@@ -4,21 +4,27 @@ export const useExchangeRates = () => {
     const [exchangeRates, setExchangeRates] = useState({
         state: "loading",
     });
-    const apiURL = "https://api.exchangerate.host/latest?base=PLN";
+    //const apiURL = "https://api.currencyapi.com/v3/latest?base_currency=PLN&apikey=cur_live_6llvihELzLdVcG99rF5E21DABDemk39WgT0NCM38";
+    const localCurrencyPath = "currency-converter-react/currency.json";
 
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await fetch(apiURL);
+                //const response = await fetch(apiURL);
+                const response = await fetch(localCurrencyPath);
+                console.log('response:')
+                console.log(response)
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
-                const { rates, date } = await response.json();
+                const { data, meta } = await response.json();
+
                 setExchangeRates({
                     state: "success",
-                    rates,
-                    date,
+                    rates: data,
+                    date: meta.last_updated_at,
                 });
+
             }
             catch (error) {
                 setExchangeRates({ state: "error" });
@@ -27,5 +33,9 @@ export const useExchangeRates = () => {
         };
         setTimeout(fetchRates, 1000);
     }, []);
+    console.log("exchangerates pobrane")
+    console.log(exchangeRates.rates)
+
     return exchangeRates;
+
 };
