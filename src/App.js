@@ -9,22 +9,31 @@ function App() {
 
   const calculateResult = (currency, amount) => {
     const rate = exchangeRates.rates[currency];
+    const currencyRate = rate.value;
+    console.log("rate")
+    console.log(rate)
+    console.log("kurs waluty")
+    console.log(rate.value)
+    console.log('amount:')
+    console.log(amount)
+    console.log("currency:")
+    console.log(currency)
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount * rate,
+      targetAmount: amount * currencyRate,
       currency,
-      exchangeRate: 1 / rate,
+      exchangeRate: 1 / currencyRate,
     });
   }
 
   return (
-       <Form
-        calculateResult={calculateResult}
-        result={result}
-        exchangeRates={exchangeRates}
-      />
-   )
+    <Form
+      calculateResult={calculateResult}
+      result={result}
+      exchangeRates={exchangeRates}
+    />
+  )
 }
 
 export default App;
