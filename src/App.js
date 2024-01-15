@@ -18,6 +18,10 @@ function App() {
     console.log(amount)
     console.log("currency:")
     console.log(currency)
+    console.log("calculateResult:")
+    console.log(calculateResult)
+    console.log("result w App:")
+    console.log(result)
 
     setResult({
       sourceAmount: +amount,

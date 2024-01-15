@@ -12,7 +12,8 @@ export const useExchangeRates = () => {
             try {
                 //const response = await fetch(apiURL);
                 const response = await fetch(localCurrencyPath);
-                console.log('response:')
+
+                console.log('response w useExchangeRates:')
                 console.log(response)
                 if (!response.ok) {
                     throw new Error(response.statusText);
