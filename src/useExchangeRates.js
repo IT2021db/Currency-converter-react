@@ -5,15 +5,11 @@ export const useExchangeRates = () => {
         state: "loading",
     });
     const apiURL = process.env.REACT_APP_APIURL;
-    // const apiURL = "currency-converter-react/currency.json";
-  
+
     useEffect(() => {
         const fetchRates = async () => {
             try {
                 const response = await fetch(apiURL);
-
-                console.log('response w useExchangeRates:')
-                console.log(response)
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
@@ -24,7 +20,6 @@ export const useExchangeRates = () => {
                     rates: data,
                     date: meta.last_updated_at,
                 });
-
             }
             catch (error) {
                 setExchangeRates({ state: "error" });
@@ -33,8 +28,6 @@ export const useExchangeRates = () => {
         };
         setTimeout(fetchRates, 1000);
     }, []);
-    console.log("exchangerates pobrane")
-    console.log(exchangeRates.rates)
 
     return exchangeRates;
 
