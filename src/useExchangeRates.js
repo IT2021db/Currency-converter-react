@@ -4,14 +4,13 @@ export const useExchangeRates = () => {
     const [exchangeRates, setExchangeRates] = useState({
         state: "loading",
     });
-    //const apiURL = "https://api.currencyapi.com/v3/latest?base_currency=PLN&apikey=cur_live_6llvihELzLdVcG99rF5E21DABDemk39WgT0NCM38";
-    const localCurrencyPath = "currency-converter-react/currency.json";
-
+    const apiURL = process.env.REACT_APP_APIURL;
+    // const apiURL = "currency-converter-react/currency.json";
+  
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                //const response = await fetch(apiURL);
-                const response = await fetch(localCurrencyPath);
+                const response = await fetch(apiURL);
 
                 console.log('response w useExchangeRates:')
                 console.log(response)
