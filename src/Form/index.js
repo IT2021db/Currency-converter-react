@@ -18,7 +18,7 @@ const Form = ({ calculateResult, result, exchangeRates }) => {
             {exchangeRates.state === "loading"
                 ? (<>
                     <Loading> <Legend >Przelicznik walut</Legend>
-                        Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego <br />
+                        Poczekaj chwilkę, ładuję dane z currencyapi.com <br />
                         <img src={load} alt='cirle' width='50' height='50' />
                     </Loading>
                 </>
